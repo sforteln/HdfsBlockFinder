@@ -59,7 +59,3 @@ To get it working you can build the project using the maven pom or just download
 	
 Then all the examples above should work.
 	
-## Contribution ##
-
-The source code is available under the Apache 2.0 license. We are actively looking for contributors so if you have ideas, 
-code, bug reports, or fixes you would like to contribute please do so.
