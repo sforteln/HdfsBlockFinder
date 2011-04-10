@@ -53,7 +53,8 @@ To get it working you can build the project using the maven pom or just download
     wget http://mirrors.ibiblio.org/pub/mirrors/maven2/commons-logging/commons-logging/1.1.1/commons-logging-1.1.1.jar
     wget http://apache.mirrors.hoobly.com//hadoop/core/hadoop-0.20.2/hadoop-0.20.2.tar.gz
     tar -zxf hadoop-0.20.2.tar.gz hadoop-0.20.2/hadoop-0.20.2-core.jar
-	wget https://github.com/downloads/sforteln/HdfsBlockFinder/blockFinder-1.0.jar
+	mv hadoop-0.20.2/hadoop-0.20.2-core.jar .
+	wget --no-check-certificate https://github.com/downloads/sforteln/HdfsBlockFinder/blockFinder-1.0.jar
     cd ../
 	java -cp 'dist/*'  hadoop.utils.BlockFinder -h hdfs://localhost:9000 -u superuser,supergroup -f /tmp/temp-1416832744/tmp154868920/part-r-00000 -b 67108864
 	
