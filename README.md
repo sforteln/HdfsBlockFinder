@@ -7,13 +7,13 @@ It does this by quering the namenode for the datanodes that have the various blo
 * Display the location of a single selected block
 
 ## Usage ##
-    -h - The url for the namenode
+    -h The url for the namenode
     -u user name and group to use
     -f the file to get the block locations for
     -b (Optional) the block to list the location for
 
 eg.
-java -cp 'dist/*'  hadoop.utils.BlockFinder -h hdfs://localhost:9000 -u superuser,supergroup -f /tmp/temp-1416832744/tmp154868920/part-r-00000 -b 67108864
+    java -cp 'dist/*'  hadoop.utils.BlockFinder -h hdfs://localhost:9000 -u superuser,supergroup -f /tmp/temp-1416832744/tmp154868920/part-r-00000 -b 67108864
 
 ## Displaying all blocks for a file ##
 
