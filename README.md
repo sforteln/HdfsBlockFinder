@@ -19,22 +19,46 @@ java -cp 'dist/*'  hadoop.utils.BlockFinder -h hdfs://localhost:9000 -u superuse
 
 If you don't include a block you will get all the blocks for a file 
 eg.
-java -cp 'dist/*'  hadoop.utils.BlockFinder -h hdfs://localhost:9000 -u superuser,supergroup -f /tmp/temp-1416832744/tmp154868920/part-r-00000
+    java -cp 'dist/*'  hadoop.utils.BlockFinder -h hdfs://localhost:9000 -u superuser,supergroup -f /tmp/temp-1416832744/tmp154868920/part-r-00000
 
 will yield
-
     Trying to connect to hdfs://localhost:9000 as superuser,supergroup
+    File: /tmp/temp-1416832744/tmp154868920/part-r-00000
+    Replication : 1
+	Block Locations:
+    Start,End,DataNode
+    0,67108864,localhost
+    67108864,24546580,localhost
+
+## Displaying a single block from a file ##
+
+To only see the location(DataNode) for a single block include the block's position
+eg.
+    java -cp 'dist/*'  hadoop.utils.BlockFinder -h hdfs://localhost:9000 -u superuser,supergroup -f /tmp/temp-1416832744/tmp154868920/part-r-00000 -b 67108864
+
+will yield
+    Trying to connect to hdfs://localhost:9000 as pdadmin,supergroup
     File: /tmp/temp-1416832744/tmp154868920/part-r-00000
     Replication : 1
     Requested block :
     Start,End,DataNode
-    67108864,24546580,localhost.corp.ad.local
-
-
-## Displaying a single block from a file ##
+    67108864,24546580,localhost
 
 ## Getting it working ##
+To get it working you can build the project using the maven pom or just download the dependencies, into dist/, using
 
+    mkdir dist
+    cd dist
+    wget http://mirrors.ibiblio.org/pub/mirrors/maven/commons-cli/jars/commons-cli-1.1.jar
+    wget http://mirrors.ibiblio.org/pub/mirrors/maven2/commons-logging/commons-logging/1.1.1/commons-logging-1.1.1.jar
+    wget http://apache.mirrors.hoobly.com//hadoop/core/hadoop-0.20.2/hadoop-0.20.2.tar.gz
+    tar -zxf hadoop-0.20.2.tar.gz hadoop-0.20.2/hadoop-0.20.2-core.jar
+	wget https://github.com/downloads/sforteln/HdfsBlockFinder/blockFinder-1.0.jar
+    cd ../
+	java -cp 'dist/*'  hadoop.utils.BlockFinder -h hdfs://localhost:9000 -u superuser,supergroup -f /tmp/temp-1416832744/tmp154868920/part-r-00000 -b 67108864
+	
+Then all the examples above should work.
+	
 ## Contribution ##
 
 The source code is available under the Apache 2.0 license. We are actively looking for contributors so if you have ideas, 
