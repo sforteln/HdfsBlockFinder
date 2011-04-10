@@ -19,15 +19,15 @@ java -cp 'dist/*'  hadoop.utils.BlockFinder -h hdfs://localhost:9000 -u superuse
 
 If you don't include a block you will get all the blocks for a file 
 eg.
->java -cp 'dist/*'  hadoop.utils.BlockFinder -h hdfs://localhost:9000 -u superuser,supergroup -f /tmp/temp-1416832744/tmp154868920/part-r-00000
+> java -cp 'dist/*'  hadoop.utils.BlockFinder -h hdfs://localhost:9000 -u superuser,supergroup -f /tmp/temp-1416832744/tmp154868920/part-r-00000
 will yield
 
->Trying to connect to hdfs://localhost:9000 as superuser,supergroup
->File: /tmp/temp-1416832744/tmp154868920/part-r-00000
->Replication : 1
->Requested block :
->Start,End,DataNode
->67108864,24546580,localhost.corp.ad.local
+> Trying to connect to hdfs://localhost:9000 as superuser,supergroup
+> File: /tmp/temp-1416832744/tmp154868920/part-r-00000
+> Replication : 1
+> Requested block :
+> Start,End,DataNode
+> 67108864,24546580,localhost.corp.ad.local
 
 
 ## Displaying a single block from a file ##
