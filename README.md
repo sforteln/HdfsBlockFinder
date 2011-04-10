@@ -24,8 +24,8 @@ java -cp 'dist/*'  hadoop.utils.BlockFinder -h hdfs://localhost:9000 -u superuse
 will yield
 
 > Trying to connect to hdfs://localhost:9000 as superuser,supergroup
-> File: /tmp/temp-1416832744/tmp154868920/part-r-00000
-> Replication : 1
+File: /tmp/temp-1416832744/tmp154868920/part-r-00000
+Replication : 1
 > Requested block :
 > Start,End,DataNode
 > 67108864,24546580,localhost.corp.ad.local
