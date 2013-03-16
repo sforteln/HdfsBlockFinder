@@ -1,6 +1,6 @@
 # HDFS(Hadoop) File Block Finder #
 
-This is a samll utility I wrote to find the locataion of a files blockes in hdfs.  
+This is a small utility I wrote to find the locataion of a files blockes in hdfs.  
 It does this by quering the namenode for the datanodes that have the various blocks of the file. There are two ways to use it
 
 * Display the location of all blocks for a file and where they are
